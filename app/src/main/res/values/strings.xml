@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FlashAlert</string>
+    <string name="description">Notifie par flash dès que vous recevez un message</string>
+</resources>
