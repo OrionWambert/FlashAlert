@@ -15,8 +15,8 @@ import android.widget.Toast;
 public class SmsReceiver extends BroadcastReceiver{
 
 
-    Camera camera;
-    Camera.Parameters p;
+    private Camera camera;
+    private Camera.Parameters p;
 
 
     private final String sms="android.provider.Telephony.SMS_RECEIVED";
@@ -31,24 +31,27 @@ public class SmsReceiver extends BroadcastReceiver{
             p = camera.getParameters();
             p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
             camera.setParameters(p);
-            Toast.makeText(context,"Alumage du Flahs",Toast.LENGTH_SHORT);
+            Toast.makeText(context,"Alumage du Flash",Toast.LENGTH_SHORT).show();
 
             stop();
             start();
 
             stop();
             start();
+
             stop();
             start();
 
             stop();
             start();
+
+            Toast.makeText(context,"Arrêt du Flash",Toast.LENGTH_SHORT).show();
             stop();
 
         }
     }
 
-    public void start(){
+    private void start(){
         try {
             Thread.sleep(1000);
             p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
@@ -58,7 +61,7 @@ public class SmsReceiver extends BroadcastReceiver{
         }
     }
 
-    public void stop(){
+    private void stop(){
         try {
             Thread.sleep(1000);
             p.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
